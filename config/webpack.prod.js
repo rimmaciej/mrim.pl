@@ -3,6 +3,7 @@ const path = require('path');
 const baseConf = require('./webpack.base.js');
 const merge = require('webpack-merge');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -39,12 +40,16 @@ module.exports = merge(baseConf, {
 		rules: [
 			{
 				test: /\.scss$/,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+				use: [
+					MiniCssExtractPlugin.loader,
+					'css-loader',
+					{ loader: 'sass-loader', options: { implementation: require('sass') } }
+				]
 			},
 
 			{
 				test: /\.css$/,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+				use: [MiniCssExtractPlugin.loader, 'css-loader']
 			}
 		]
 	},
@@ -59,6 +64,14 @@ module.exports = merge(baseConf, {
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].bundle.css'
 		}),
+
+		new CopyWebpackPlugin([
+			{
+				from: path.resolve(__dirname, '../src/assets'),
+				to: path.resolve(__dirname, '../dist/'),
+				toType: 'dir'
+			}
+		]),
 
 		new HtmlWebpackPlugin({
 			filename: path.resolve(__dirname, '../dist/index.html'),
