@@ -5,7 +5,36 @@ $background: rgb(10, 10, 10);
 //! Dimensions
 $btn-height: 40px;
 
-//! Global styles
+//! Fonts
+/* josefin-sans-100 - latin */
+@font-face {
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-weight: 100;
+	src: url('./assets/fonts/josefin-sans-v14-latin-100.eot');
+	src: local('Josefin Sans Thin'), local('JosefinSans-Thin'),
+		url('./assets/fonts/josefin-sans-v14-latin-100.eot?#iefix') format('embedded-opentype'),
+		url('./assets/fonts/josefin-sans-v14-latin-100.woff2') format('woff2'),
+		url('./assets/fonts/josefin-sans-v14-latin-100.woff') format('woff'),
+		url('./assets/fonts/josefin-sans-v14-latin-100.ttf') format('truetype'),
+		url('./assets/fonts/josefin-sans-v14-latin-100.svg#JosefinSans') format('svg');
+}
+
+/* josefin-sans-300 - latin */
+@font-face {
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: url('./assets/fonts/josefin-sans-v14-latin-300.eot');
+	src: local('Josefin Sans Light'), local('JosefinSans-Light'),
+		url('./assets/fonts/josefin-sans-v14-latin-300.eot?#iefix') format('embedded-opentype'),
+		url('./assets/fonts/josefin-sans-v14-latin-300.woff2') format('woff2'),
+		url('./assets/fonts/josefin-sans-v14-latin-300.woff') format('woff'),
+		url('./assets/fonts/josefin-sans-v14-latin-300.ttf') format('truetype'),
+		url('./assets/fonts/josefin-sans-v14-latin-300.svg#JosefinSans') format('svg');
+}
+
+//! Styles
 * {
 	box-sizing: border-box;
 }
@@ -17,18 +46,49 @@ body {
 	height: 100%;
 	height: 100vh;
 
-	justify-content: center;
-	align-items: center;
-
 	background-color: $background;
 	color: invert($background);
 
 	font-family: sans-serif;
 }
 
-//! Component styles
+#root {
+	width: 100vw;
+}
+
+.page-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.page {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+
+	&:nth-child(even) {
+		background-color: lighten($background, 2%);
+	}
+
+	&:nth-child(odd) {
+		background-color: $background;
+	}
+}
+
+// Main page
 .name {
-	font-size: 100px;
+	@media (max-width: 768px) {
+		font-size: 5em;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 10em;
+	}
+
+	font-family: 'Josefin Sans';
+	font-weight: 100;
+
 	text-align: center;
 	color: $primary;
 
@@ -40,29 +100,46 @@ body {
 	user-select: none;
 	color: #777;
 
-	padding: 5px;
-}
+	font-family: 'Josefin Sans';
+	font-weight: 300;
 
-.link-btn {
-	display: inline-block;
+	@media (max-width: 768px) {
+		font-size: 1em;
+	}
 
-	width: 150px;
-	margin: 10px;
-	height: $btn-height;
-
-	line-height: $btn-height;
-	text-align: center;
-
-	color: #999;
-	background: rgb(13, 13, 13);
-
-	transition: color 0.4s, background 0.4s;
-
-	text-decoration: none;
-	user-select: none;
-
-	&:hover {
-		color: white;
-		background: rgb(17, 17, 17);
+	@media (min-width: 768px) {
+		font-size: 1.5em;
 	}
 }
+
+.links {
+	display: flex;
+	justify-content: center;
+	min-width: 0;
+	margin-top: 25px;
+
+	.link-btn {
+		text-align: center;
+
+		margin: 5px 20px;
+
+		color: #999;
+
+		transition: border 0.5s;
+
+		text-decoration: none;
+		user-select: none;
+
+		font-family: 'Josefin Sans';
+		font-weight: 300;
+
+		border-bottom: 1px solid rgb(75, 75, 75);
+
+		&:hover {
+			// color: $primary;
+			border-bottom: 1px solid $primary;
+		}
+	}
+}
+
+// About page
