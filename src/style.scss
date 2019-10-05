@@ -1,0 +1,68 @@
+//! Colors
+$primary: rgb(92, 107, 192);
+$background: rgb(10, 10, 10);
+
+//! Dimensions
+$btn-height: 40px;
+
+//! Global styles
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	margin: 0;
+
+	height: 100%;
+	height: 100vh;
+
+	justify-content: center;
+	align-items: center;
+
+	background-color: $background;
+	color: invert($background);
+
+	font-family: sans-serif;
+}
+
+//! Component styles
+.name {
+	font-size: 100px;
+	text-align: center;
+	color: $primary;
+
+	user-select: none;
+}
+
+.summary {
+	text-align: center;
+	user-select: none;
+	color: #777;
+
+	padding: 5px;
+}
+
+.link-btn {
+	display: inline-block;
+
+	width: 150px;
+	margin: 10px;
+	height: $btn-height;
+
+	line-height: $btn-height;
+	text-align: center;
+
+	color: #999;
+	background: rgb(13, 13, 13);
+
+	transition: color 0.4s, background 0.4s;
+
+	text-decoration: none;
+	user-select: none;
+
+	&:hover {
+		color: white;
+		background: rgb(17, 17, 17);
+	}
+}
