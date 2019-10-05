@@ -4,7 +4,7 @@
 	"description": "Personal website",
 	"scripts": {
 		"dev": "webpack-dev-server --inline --progress --config webpack/dev.js",
-		"build": "webpack --inline --progress --config webpack/prod.js"
+		"build": "webpack --inline --progress --config webpack/dist.js"
 	},
 	"author": "Maciej Rim",
 	"license": "GPL-3.0",
