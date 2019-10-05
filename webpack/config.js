@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -8,8 +9,8 @@ module.exports = {
 	},
 
 	output: {
-		filename: 'js/[name].bundle.js',
-		path: './dist/'
+		filename: 'js/[name].[hash].js',
+		path: path.join(__dirname, './dist/')
 	},
 
 	module: {
@@ -54,7 +55,7 @@ module.exports = {
 		new HtmlPlugin({
 			template: './src/index.html',
 			filename: './index.html',
-			favicon: './src/assets/icons/icon.png'
+			favicon: './src/assets/icon.png'
 		}),
 		new CopyPlugin([
 			{
