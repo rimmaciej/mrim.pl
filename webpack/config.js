@@ -53,13 +53,13 @@ module.exports = {
 
 	plugins: [
 		new HtmlPlugin({
-			template: './src/index.html',
+			template: './assets/index.html',
 			filename: './index.html',
-			favicon: './src/assets/icon.png'
+			favicon: './assets/icon.png'
 		}),
 		new CopyPlugin([
 			{
-				from: './src/assets/',
+				from: './assets/',
 				to: './assets/',
 				toType: 'dir'
 			}

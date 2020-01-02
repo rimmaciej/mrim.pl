@@ -11,13 +11,13 @@ $btn-height: 40px;
 	font-family: 'Josefin Sans';
 	font-style: normal;
 	font-weight: 100;
-	src: url('./assets/fonts/josefin-sans-v14-latin-100.eot');
+	src: url('../assets/fonts/josefin-sans-v14-latin-100.eot');
 	src: local('Josefin Sans Thin'), local('JosefinSans-Thin'),
-		url('./assets/fonts/josefin-sans-v14-latin-100.eot?#iefix') format('embedded-opentype'),
-		url('./assets/fonts/josefin-sans-v14-latin-100.woff2') format('woff2'),
-		url('./assets/fonts/josefin-sans-v14-latin-100.woff') format('woff'),
-		url('./assets/fonts/josefin-sans-v14-latin-100.ttf') format('truetype'),
-		url('./assets/fonts/josefin-sans-v14-latin-100.svg#JosefinSans') format('svg');
+		url('../assets/fonts/josefin-sans-v14-latin-100.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/josefin-sans-v14-latin-100.woff2') format('woff2'),
+		url('../assets/fonts/josefin-sans-v14-latin-100.woff') format('woff'),
+		url('../assets/fonts/josefin-sans-v14-latin-100.ttf') format('truetype'),
+		url('../assets/fonts/josefin-sans-v14-latin-100.svg#JosefinSans') format('svg');
 }
 
 /* josefin-sans-300 - latin */
@@ -25,13 +25,13 @@ $btn-height: 40px;
 	font-family: 'Josefin Sans';
 	font-style: normal;
 	font-weight: 300;
-	src: url('./assets/fonts/josefin-sans-v14-latin-300.eot');
+	src: url('../assets/fonts/josefin-sans-v14-latin-300.eot');
 	src: local('Josefin Sans Light'), local('JosefinSans-Light'),
-		url('./assets/fonts/josefin-sans-v14-latin-300.eot?#iefix') format('embedded-opentype'),
-		url('./assets/fonts/josefin-sans-v14-latin-300.woff2') format('woff2'),
-		url('./assets/fonts/josefin-sans-v14-latin-300.woff') format('woff'),
-		url('./assets/fonts/josefin-sans-v14-latin-300.ttf') format('truetype'),
-		url('./assets/fonts/josefin-sans-v14-latin-300.svg#JosefinSans') format('svg');
+		url('../assets/fonts/josefin-sans-v14-latin-300.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/josefin-sans-v14-latin-300.woff2') format('woff2'),
+		url('../assets/fonts/josefin-sans-v14-latin-300.woff') format('woff'),
+		url('../assets/fonts/josefin-sans-v14-latin-300.ttf') format('truetype'),
+		url('../assets/fonts/josefin-sans-v14-latin-300.svg#JosefinSans') format('svg');
 }
 
 //! Styles

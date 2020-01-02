@@ -32,7 +32,7 @@ export default function AboutPage() {
 				<div className="links">
 					<LinkButton link="https://github.com/rimmaciej">Github</LinkButton>
 					<LinkButton link="https://www.linkedin.com/in/maciej-rim/">LinkedIn</LinkButton>
-					<LinkButton link="mailto:contact@mrim.pl">Mail</LinkButton>
+					<LinkButton link="mailto:contact@mrim.pl">Contact</LinkButton>
 				</div>
 			</div>
 		</div>
