@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'react-jss';
+import ReactGA from 'react-ga';
 
 import App from './components/App';
+
+ReactGA.initialize('UA-110466704-5');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const theme = {
 	primary: 'rgb(92, 107, 192)',
