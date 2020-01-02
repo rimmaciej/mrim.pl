@@ -4,8 +4,6 @@ const merge = require('webpack-merge');
 // Plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const ExtractCss = require('mini-css-extract-plugin');
-const OptimizeCss = require('optimize-css-assets-webpack-plugin');
 
 module.exports = merge(require('./config.js'), {
 	mode: 'production',
@@ -28,15 +26,9 @@ module.exports = merge(require('./config.js'), {
 						ecma: 6
 					}
 				}
-			}),
-			new OptimizeCss({})
+			})
 		]
 	},
 
-	plugins: [
-		new CleanWebpackPlugin(),
-		new ExtractCss({
-			filename: 'css/[name].bundle.css'
-		})
-	]
+	plugins: [new CleanWebpackPlugin()]
 });
