@@ -5,7 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: {
-		main: './src/index.js'
+		main: './src/index.jsx'
 	},
 
 	output: {
@@ -17,6 +17,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
+				resolve: { extensions: ['.js', '.jsx'] },
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader'
@@ -27,17 +28,6 @@ module.exports = {
 				use: {
 					loader: 'html-loader'
 				}
-			},
-			{
-				test: /\.(css|sass|scss)$/,
-				use: [
-					{ loader: 'style-loader' },
-					{ loader: 'css-loader' },
-					{
-						loader: 'sass-loader',
-						options: { implementation: require('sass') }
-					}
-				]
 			},
 			{
 				test: /\.(ttf|eot|woff|woff2|svg)$/,
