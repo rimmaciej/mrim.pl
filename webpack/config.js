@@ -5,12 +5,12 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: {
-		main: './src/index.jsx'
+		main: './src/index.jsx',
 	},
 
 	output: {
 		filename: 'js/[name].[hash].js',
-		path: path.join(__dirname, '../dist/')
+		path: path.join(__dirname, '../dist/'),
 	},
 
 	module: {
@@ -20,39 +20,41 @@ module.exports = {
 				resolve: { extensions: ['.js', '.jsx'] },
 				exclude: /node_modules/,
 				use: {
-					loader: 'babel-loader'
-				}
+					loader: 'babel-loader',
+				},
 			},
 			{
 				test: /\.html$/,
 				use: {
-					loader: 'html-loader'
-				}
+					loader: 'html-loader',
+				},
 			},
 			{
 				test: /\.(ttf|eot|woff|woff2|svg)$/,
 				use: {
 					loader: 'file-loader',
 					options: {
-						name: 'assets/fonts/[name].[ext]'
-					}
-				}
-			}
-		]
+						name: 'assets/fonts/[name].[ext]',
+					},
+				},
+			},
+		],
 	},
 
 	plugins: [
 		new HtmlPlugin({
 			template: './assets/index.html',
 			filename: './index.html',
-			favicon: './assets/icon.png'
+			favicon: './assets/icon.png',
 		}),
-		new CopyPlugin([
-			{
-				from: './assets/',
-				to: './assets/',
-				toType: 'dir'
-			}
-		])
-	]
+		new CopyPlugin({
+			patterns: [
+				{
+					from: './assets/',
+					to: './assets/',
+					toType: 'dir',
+				},
+			],
+		}),
+	],
 };

@@ -1,5 +1,5 @@
 'use strict';
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 // Plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -9,7 +9,7 @@ module.exports = merge(require('./config.js'), {
 	mode: 'production',
 
 	output: {
-		publicPath: '/'
+		publicPath: '/',
 	},
 
 	optimization: {
@@ -23,12 +23,12 @@ module.exports = merge(require('./config.js'), {
 						dead_code: true,
 						conditionals: true,
 						booleans: true,
-						ecma: 6
-					}
-				}
-			})
-		]
+						ecma: 6,
+					},
+				},
+			}),
+		],
 	},
 
-	plugins: [new CleanWebpackPlugin()]
+	plugins: [new CleanWebpackPlugin()],
 });
